@@ -18,3 +18,14 @@ Elements: 3
 Category: Technologies
 Elements: 5
 */
+
+const listOfCategories = document.querySelector('#categories')
+const itemCategories = listOfCategories.children;
+console.log('Number of categories:', itemCategories.length);
+
+
+const sublistCategories = document.querySelectorAll('.item');
+sublistCategories.forEach(sublist => {
+    console.log('Category:', sublist.firstElementChild.textContent);
+    console.log('Elements:', sublist.lastElementChild.children.length);
+})
