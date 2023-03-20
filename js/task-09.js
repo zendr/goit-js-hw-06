@@ -15,8 +15,31 @@ function getRandomHexColor() {
 }
 */
 
+
+const bgColorEl = document.querySelector('.color');
+const btnChangeColorEl = document.querySelector('.change-color');
+const bodyEl = document.querySelector('body');
+
+// console.log(bodyEl);
+// console.log(bgColorEl);
+// console.log(btnChangeColorEl);
+// console.log(bgColorEl.textContent);
+
+btnChangeColorEl.addEventListener('click', onBtnChangeColorClick);
+
+function onBtnChangeColorClick(event) {
+  const randomColor = getRandomHexColor();
+  console.log('randomColor', randomColor);
+  bgColorEl.textContent = randomColor;
+  bodyEl.style.backgroundColor = randomColor;
+};
+
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215)
+//     .toString(16)
+//     .padStart(6, 0)}`;
+// };
+
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+};

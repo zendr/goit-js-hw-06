@@ -31,3 +31,23 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+
+const createIngredientsEl = elements => {
+  return ingredients.map(elem => {
+    const ingredientEl = document.createElement('li');
+  //  console.log(elem);
+    ingredientEl.textContent = elem;
+    ingredientEl.classList.add('item');
+  //  console.log(ingredientEl);
+  
+    return ingredientEl;
+  });
+};
+
+const ingredientsListEl = document.querySelector('#ingredients');
+console.log('Список ul#ingredients ', ingredientsListEl);
+
+const listItemsEl = createIngredientsEl();
+console.log('Список зачень елементів <li> ', ...listItemsEl);
+
+ingredientsListEl.append(...listItemsEl);

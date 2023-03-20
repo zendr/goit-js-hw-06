@@ -24,3 +24,44 @@
   border-color: #f44336;
 }
 */
+
+
+const inputEl = document.querySelector('#validation-input');
+// const validNumberLength = inputEl.dataset.length;
+const validNumberLength = Number(inputEl.dataset.length);
+// console.log(inputEl);
+// console.log(validNumberLength);
+
+
+// inputEl.addEventListener('blur', onInputValid);
+inputEl.addEventListener('blur', onInputInValid);
+inputEl.addEventListener('input', onRemoveClass);
+inputEl.addEventListener('blur', onRemoveClass);
+
+
+function onRemoveClass(event) {
+    if (event.currentTarget.value.length === 0) {
+        inputEl.classList.remove("invalid", "valid");
+        // console.log('remove');
+    }
+//     if (event.currentTarget.value.length === validNumberLength) {
+//         inputEl.classList.remove("invalid");
+//    } else inputEl.classList.remove("valid");
+};
+
+
+function onInputInValid(event) {
+
+    if (event.currentTarget.value.length !== validNumberLength) {
+        console.log('invalid', validNumberLength);
+        inputEl.classList.remove("valid");
+      inputEl.classList.add("invalid");
+// console.log('invalid');
+
+    } else {
+        inputEl.classList.remove("invalid");
+        inputEl.classList.add("valid");
+    }
+        
+
+};

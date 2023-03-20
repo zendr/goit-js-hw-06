@@ -22,10 +22,9 @@ function getRandomHexColor() {
 
 Створи функцію destroyBoxes(), яка очищає вміст div#boxes, у такий спосіб видаляючи всі створені елементи.
 */
+const numberBoxEl = document.querySelector('input[type="number"]');
+const bgCreateEl = document.querySelector('button[data-create]');
+const btnDestroyEl = document.querySelector('button[data-destroy]');
+const containerBoxesEl = document.querySelector('#boxes');
+const boxEl = document.querySelector('.div-item');
 
-
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
