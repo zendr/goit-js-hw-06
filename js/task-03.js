@@ -42,6 +42,22 @@ const galleryListEl = document.querySelector('.gallery');
 console.log(galleryListEl);
 
 const createImgEl = images.map((element) => {
-  galleryListEl.insertAdjacentHTML('afterbegin', `<li class="gallery__item"><img src='${element.url}' alt='${element.alt}'></img></li>`);
-
+  galleryListEl.insertAdjacentHTML('afterbegin', `<li class="gallery__item"><img class="gallery__img" src='${element.url}' alt='${element.alt}'></img></li>`);
 });
+galleryListEl.style.display = "flex";
+galleryListEl.style.justifyContent = 'center'
+galleryListEl.style.gap = "10px";
+galleryListEl.style.listStyle = "none";
+
+for (const element of galleryListEl.children) { 
+element.style.height = '250px';
+}
+
+const pictures = document.getElementsByClassName('gallery__img');
+
+for (const element of pictures) {
+
+  element.style.height = '100%';
+  element.style.border = '2px solid green';
+  element.style.borderRadius = '5px';
+}
